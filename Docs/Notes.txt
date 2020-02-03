@@ -1,0 +1,16 @@
+This file will be ignored in all commits.
+To be used for note taking related to the project.
+
+Useful links:
+
+How to run C# in command prompt
+http://www.androidtopc.com/2016/07/how-to-run-c-program-in-command-prompt.html
+
+How to built C# project in VS Code
+https://stackoverflow.com/questions/31380895/how-to-create-a-command-line-application
+
+VS Code documentation with C# from VS Code
+https://code.visualstudio.com/Docs/languages/csharp
+
+C# CLI application example
+https://www.csharp-console-examples.com/csharp-console/c-console-examples/
