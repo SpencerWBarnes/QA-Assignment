@@ -13,17 +13,48 @@ def main():
     elif (choice == '0'):
       break
     else:
-      input("\nThat does not appear to be a choice, try again\n")
+      input("\nThat does not appear to be a choice\n")
       continue
 
 # def runBMI():
 #   pass
 
-# def getHeight():
-#   return double
+def getHeight():
+  height = 0
+  while(True):
+    print("\tMust be a whole number, greater than 0, and less than 9")
+    feet = input(" ft:")
+    if (!feet.isdigit()):
+      input("\tThat is not a whole number")
+    elif (feet <= 0 or feet >= 9):
+      input("\tThat is too high or too low")
+    else:
+      height = feet
+      break
 
-# def getWeight():
-#   return double
+  while(True):
+    print("\tMust be zero or greater and less than 12")
+    inches = input(" in:")
+    if (!isinstance(inches,(int,float))):
+      input("\tThat is not a number")
+    elif (inches < 0 || inches >= 12):
+      input("\tThat is too high or too low")
+    else:
+      height += inches/12
+      break
+  return height
+
+def getWeight():
+  weight = 0
+  while(True):
+    print("\tMust be a number greater than 0")
+    weight = input(" lb:")
+    if (!isinstance(weight,(int,float))):
+      input("\tThat is not a whole number")
+    elif (weight < 0):
+      input("\tThat is too low")
+    else:
+      return weight
 
 # def calculateBMI(height, weight):
 #   return double

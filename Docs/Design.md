@@ -18,7 +18,7 @@ Get height in feet and inches from the user. Error handling will ensure feasible
 
 ---
 **double getWeight()**
-Get weight in poounds from the user. Error handling will ensure feasiable values are entered.
+Get weight in pounds from the user. Error handling will ensure feasiable values are entered.
 - Provided weight value may be double and must be: x > 0
 
 ---
