@@ -22,10 +22,13 @@ def main():
       continue
 
 def runBMI():
+  # Lead in with title
   print("\nCalculating BMI")
+  # Expected input
   print(" Getting height, enter height in feet then inches")
   height = getHeight()
 
+  # Expected input
   print("\n Getting weight, enter weight in pounds")
   weight = getWeight()
 
@@ -34,6 +37,7 @@ def runBMI():
 
 def getHeight():
   height = 0
+  # Repeatedly ask for input until provided
   while(True):
     print("\tMust be a whole number, greater than 0, and less than 9")
     feet = input("  ft:")
@@ -54,6 +58,7 @@ def getHeight():
 
   print("")
 
+  # Repeatedly ask for input until provided
   while(True):
     print("\tMust be zero or greater, and less than 12")
     inches = input("  in:")
@@ -75,6 +80,7 @@ def getHeight():
 
 def getWeight():
   weight = 0
+  # Repeatedly ask for input until provided
   while(True):
     print("\tMust be a number greater than 0")
     weight = input("  lb:")
