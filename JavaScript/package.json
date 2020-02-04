@@ -1,0 +1,31 @@
+{
+  "name": "qa-assignment2",
+  "version": "1.0.0",
+  "description": "A short application developed for assignment 2 of CSE 4283 Software Testing and Quality Assurance",
+  "main": "main.js",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SpencerWBarnes/QA-Assignment2.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "JS",
+    "Testing",
+    "QA",
+    "Quality",
+    "Assurance"
+  ],
+  "author": "Spencer Barnes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SpencerWBarnes/QA-Assignment2/issues"
+  },
+  "homepage": "https://github.com/SpencerWBarnes/QA-Assignment2#readme"
+}
