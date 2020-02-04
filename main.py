@@ -1,5 +1,20 @@
 def main():
-  pass
+  while(True):
+    print("Please make a selection:");
+    print(" (1) Calculate BMI");
+    print(" (2) Calculate retirement age");
+    print(" (0) Exit");
+    choice = input(" :");
+
+    if (choice == '1'):
+      pass
+    elif (choice == '2'):
+      pass
+    elif (choice == '0'):
+      break
+    else:
+      input("\nThat does not appear to be a choice, try again\n")
+      continue
 
 # def runBMI():
 #   pass
