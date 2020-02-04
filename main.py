@@ -56,8 +56,21 @@ def getWeight():
     else:
       return weight
 
-# def calculateBMI(height, weight):
-#   return double
+def calculateBMI(height, weight):
+  bmi = (weight * 0.45) / ((height * 0.025)**2)
+  print("-----")
+  print("| BMI: "+bmi)
+  print("| Cat: ", end='')
+  if (bmi < 18.5):
+    print("Underweight")
+  elif (bmi >= 18.5 and bmi <= 24.9):
+    print("Normal weight")
+  elif (bmi >= 25 and bmi <= 29.9):
+    print("Overweight")
+  else:
+    print("Obese")
+
+  print("-----\n")
 
 # def runRetirementCalculator():
 #   pass
