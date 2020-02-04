@@ -24,23 +24,23 @@ def getHeight():
   while(True):
     print("\tMust be a whole number, greater than 0, and less than 9")
     feet = input(" ft:")
-    if (!feet.isdigit()):
+    if (not feet.isdigit()):
       input("\tThat is not a whole number")
     elif (feet <= 0 or feet >= 9):
       input("\tThat is too high or too low")
     else:
-      height = feet
+      height = feet*12
       break
 
   while(True):
     print("\tMust be zero or greater and less than 12")
     inches = input(" in:")
-    if (!isinstance(inches,(int,float))):
+    if (not isinstance(inches,(int,float))):
       input("\tThat is not a number")
-    elif (inches < 0 || inches >= 12):
+    elif (inches < 0 or inches >= 12):
       input("\tThat is too high or too low")
     else:
-      height += inches/12
+      height += inches
       break
   return height
 
@@ -49,7 +49,7 @@ def getWeight():
   while(True):
     print("\tMust be a number greater than 0")
     weight = input(" lb:")
-    if (!isinstance(weight,(int,float))):
+    if (not isinstance(weight,(int,float))):
       input("\tThat is not a whole number")
     elif (weight < 0):
       input("\tThat is too low")
@@ -58,8 +58,10 @@ def getWeight():
 
 def calculateBMI(height, weight):
   bmi = (weight * 0.45) / ((height * 0.025)**2)
+  bmi = round(bmi,1)
+
   print("-----")
-  print("| BMI: "+bmi)
+  print("| BMI: "+ str(bmi))
   print("| Cat: ", end='')
   if (bmi < 18.5):
     print("Underweight")
