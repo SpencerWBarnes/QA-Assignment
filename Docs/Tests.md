@@ -11,6 +11,8 @@
 ```
 </details>
 
+#### BMI Functionality
+
 <details>
 <summary>runBMI</summary>
 
@@ -59,6 +61,8 @@
 - Achieve BMI 30
 ```
 </details>
+
+#### Retirment Age Calculator Functionality
 
 <details>
 <summary>runRetirementCalculator</summary>
