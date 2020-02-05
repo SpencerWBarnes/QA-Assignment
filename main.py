@@ -12,7 +12,7 @@ def main():
       runBMI()
     # Calculate retirment age
     elif (choice == '2'):
-      pass
+      runRetirementCalculator()
     # Exit
     elif (choice == '0'):
       break
@@ -21,6 +21,7 @@ def main():
       input("\nThat does not appear to be a choice\n")
       continue
 
+# Helpers associated with getting user's BMI
 def runBMI():
   # Lead in with title
   print("\nCalculating BMI")
@@ -92,7 +93,7 @@ def getWeight():
       input("\tThat is not a number")
       continue
 
-    # 0 < x
+    # x > 0
     if (weight > 0):
       return weight
     else:
@@ -116,6 +117,7 @@ def calculateBMI(height, weight):
 
   print("-----\n")
 
+# Helper associated with getting user's estimated retirement age
 def runRetirementCalculator():
   # Lead in with title
   print("\nCalculating age of retirement")
