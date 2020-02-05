@@ -116,8 +116,28 @@ def calculateBMI(height, weight):
 
   print("-----\n")
 
-# def runRetirementCalculator():
-#   pass
+def runRetirementCalculator():
+  # Lead in with title
+  print("\nCalculating age of retirement")
+  
+  # Expected input
+  print(" Getting current age, enter age in years")
+  age = getCurrentAge()
+
+  # Expected input
+  print(" Getting annual salary, enter salary in $ per year")
+  salary = getSalary()
+
+  # Expected input
+  print(" Getting percent of salary saved, enter savings as a %")
+  percentageSaved = getPercentSaved()
+
+  # Expected input
+  print(" Getting save goal, enter goal in $")
+  saveGoal = getSaveGoal()
+
+  print("\n Results")
+  calculateRetirementAge(age, salary, percentageSaved, saveGoal)
 
 # def getCurrentAge():
 #   return int
