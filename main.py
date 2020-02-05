@@ -5,7 +5,7 @@ def main():
     print(" (1) Calculate BMI");
     print(" (2) Calculate retirement age");
     print(" (0) Exit");
-    choice = input(" :");
+    choice = input(" : ");
 
     # Calculate BMI
     if (choice == '1'):
@@ -222,7 +222,7 @@ def getSaveGoal():
       input("\tThat is too low")
 
 def calculateRetirementAge(age, salary, savingPercentage, saveGoal):
-  years = saveGoal / (salary * savingsPercentage)
+  years = saveGoal / (salary * savingPercentage)
   ageMet = years + age
 
   print("-----")
