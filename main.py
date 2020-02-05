@@ -174,7 +174,7 @@ def getSalary():
       continue
 
     # x > 0
-    if (salary < 0):
+    if (salary > 0):
       return salary
     else:
       input("\tThat is too low")
@@ -199,8 +199,25 @@ def getPercentSaved():
     else:
       input("\tThat is too high or too low")
 
-# def getSaveGoal():
-#   return double
+def getSaveGoal():
+  saveGoal = 0;
+  # Repeatedly ask for input until provided
+  while(True):
+    print("\tMust be a number and greater than 0")
+    saveGoal = input("  $: ")
+
+    try:
+      saveGoal = float(saveGoal)
+    except:
+      # Non float values
+      input("\tThat is not a number")
+      continue
+
+    # x > 0
+    if (saveGoal > 0):
+      return saveGoal
+    else:
+      input("\tThat is too low")
 
 # def calculateRetirementAge(age, salary, savingPercentage, saveGoal):
 #   return int
