@@ -46,7 +46,7 @@ Get the user's salary in US dollars. Error handling will ensure feasible values 
 
 ---
 **double getPercentSaved()**
-Get the user's percentage of salary that they are saving. It is assumed that their employer is also supplying an additional 35% of their saved value. Error handling will ensure feasible values are entered.
+Get the user's percentage of salary that they are saving. It is assumed that their employer is also supplying an additional 35% of their saved percentage (_10% * 135% = 13.5%_). Error handling will ensure feasible values are entered.
 - Provided percentage may be double and must be: 0 <= x <= 100
 
 ---
