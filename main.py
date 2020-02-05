@@ -179,8 +179,25 @@ def getSalary():
     else:
       input("\tThat is too low")
 
-# def getPercentSaved():
-#   return double
+def getPercentSaved():
+  percentageSaved = 0;
+  # Repeatedly ask for input until provided
+  while(True):
+    print("\tMust be a number, 0 or greater, and 100 or less")
+    percentageSaved = input("  %: ")
+
+    try:
+      percentageSaved = int(percentageSaved)
+    except:
+      # Non float values
+      input("\tThat is not a number")
+      continue
+
+    # 0 <= x <= 100
+    if (0 <= percentageSaved and percentageSaved <= 100):
+      return percentageSaved
+    else:
+      input("\tThat is too high or too low")
 
 # def getSaveGoal():
 #   return double
