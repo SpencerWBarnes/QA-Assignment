@@ -141,7 +141,7 @@ def runRetirementCalculator():
 
 def getCurrentAge():
   age = 0;
-  # Repeatedly age for input until provided
+  # Repeatedly ask for input until provided
   while(True):
     print("\tMust be a whole number, greater than 0, and less than 100")
     age = input("  years: ")
@@ -159,8 +159,25 @@ def getCurrentAge():
     else:
       input("\tThat is too high or too low")
 
-# def getSalary():
-#   return int
+def getSalary():
+  salary = 0;
+  # Repeatedly ask for input until provided
+  while(True):
+    print("\tMust be a number and greater than 0")
+    salary = input("  $/yr: ")
+
+    try:
+      salary = float(salary)
+    except:
+      # Non float values
+      input("\tThat is not a number")
+      continue
+
+    # x > 0
+    if (salary < 0):
+      return salary
+    else:
+      input("\tThat is too low")
 
 # def getPercentSaved():
 #   return double
