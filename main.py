@@ -195,12 +195,12 @@ def getPercentSaved():
 
     # 0 <= x <= 100
     if (0 <= percentageSaved and percentageSaved <= 100):
-      return percentageSaved
+      return percentageSaved * 1.35
     else:
       input("\tThat is too high or too low")
 
 def getSaveGoal():
-  saveGoal = 0;
+  saveGoal = 0
   # Repeatedly ask for input until provided
   while(True):
     print("\tMust be a number and greater than 0")
@@ -219,8 +219,19 @@ def getSaveGoal():
     else:
       input("\tThat is too low")
 
-# def calculateRetirementAge(age, salary, savingPercentage, saveGoal):
-#   return int
+def calculateRetirementAge(age, salary, savingPercentage, saveGoal):
+  years = saveGoal / (salary * savingsPercentage)
+  ageMet = years + age
+
+  print("-----")
+  print("| Goal: ", end='')
+  if (ageMet >= 100):
+    print("Not met")
+  else:
+    print("Met")
+    print("| Age: " + str(ageMet))
+
+  print("-----\n")
 
 if (__name__ == "__main__"):
   main()
