@@ -40,7 +40,7 @@ def getHeight():
   # Repeatedly ask for input until provided
   while(True):
     print("\tMust be a whole number, greater than 0, and less than 9")
-    feet = input("  ft:")
+    feet = input("  ft: ")
 
     try:
       feet = int(feet)
@@ -61,7 +61,7 @@ def getHeight():
   # Repeatedly ask for input until provided
   while(True):
     print("\tMust be zero or greater, and less than 12")
-    inches = input("  in:")
+    inches = input("  in: ")
 
     try:
       inches = float(inches)
@@ -83,13 +83,13 @@ def getWeight():
   # Repeatedly ask for input until provided
   while(True):
     print("\tMust be a number greater than 0")
-    weight = input("  lb:")
+    weight = input("  lb: ")
 
     try:
       weight = float(weight)
     except:
       # Non float values
-      input("\tThat is not a whole number")
+      input("\tThat is not a number")
       continue
 
     # 0 < x
@@ -139,8 +139,25 @@ def runRetirementCalculator():
   print("\n Results")
   calculateRetirementAge(age, salary, percentageSaved, saveGoal)
 
-# def getCurrentAge():
-#   return int
+def getCurrentAge():
+  age = 0;
+  # Repeatedly age for input until provided
+  while(True):
+    print("\tMust be a whole number, greater than 0, and less than 100")
+    age = input("  years: ")
+
+    try:
+      age = int(age)
+    except:
+      # Non whole number values
+      input("\tThat is not a whole number")
+      continue
+
+    # 0 < x < 100
+    if (0 < age and age < 100):
+      return age
+    else:
+      input("\tThat is too high or too low")
 
 # def getSalary():
 #   return int
