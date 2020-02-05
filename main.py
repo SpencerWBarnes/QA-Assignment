@@ -222,7 +222,7 @@ def getSaveGoal():
       input("\tThat is too low")
 
 def calculateRetirementAge(age, salary, savingPercentage, saveGoal):
-  years = saveGoal / (salary * savingPercentage)
+  years = saveGoal / (salary * (savingPercentage/100))
   ageMet = years + age
 
   print("-----")
@@ -231,7 +231,7 @@ def calculateRetirementAge(age, salary, savingPercentage, saveGoal):
     print("Not met")
   else:
     print("Met")
-    print("| Age: " + str(ageMet))
+    print("| Age: " + str(int(ageMet)))
 
   print("-----\n")
 
