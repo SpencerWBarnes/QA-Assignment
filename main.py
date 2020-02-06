@@ -195,8 +195,8 @@ def getPercentSaved():
       input("\tThat is not a number")
       continue
 
-    # 0 <= x <= 100
-    if (0 <= percentageSaved and percentageSaved <= 100):
+    # 0 < x <= 100
+    if (0 < percentageSaved and percentageSaved <= 100):
       return percentageSaved * 1.35
     else:
       input("\tThat is too high or too low")

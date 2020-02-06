@@ -110,10 +110,10 @@ Tests are written in the format `<input> : <expected behavior> - <reason>` and w
 <details>
 <summary>getPercentSaved</summary>
 
-- [ ] Enter 0 : accept input
+- [ ] Enter 0.1 : accept input
 - [ ] Enter 100 : accept input
 - [ ] Enter 1.1 : accept input
-- [ ] Enter -0.1 : error message - too low
+- [ ] Enter 0 : error message - too low
 - [ ] Enter 100.1 : error message - too high
 - [ ] Enter A : error message - not a number
 
