@@ -231,7 +231,7 @@ def calculateRetirementAge(age, salary, savingPercentage, saveGoal):
     print("Not met")
   else:
     print("Met")
-    print("| Age: " + str(int(ageMet)))
+    print("| Age: " + str(round(ageMet)))
 
   print("-----\n")
 
