@@ -1,14 +1,23 @@
 # Tests
 
+Tests are written in the format `<input> : <expected behavior> - <reason>` and will generally follow the order of 
+1) Lower interior
+2) Upper interior
+3) Mid interior
+4) Lower exterior
+5) Upper exterior
+6) Unaccepted types
+
 <details>
 <summary>main</summary>
 
-``` diff
-- Execute BMI function
-- Execute Retirement Estimator function
-- Exit
-- Enter non-available choice
-```
+- [ ] Enter 1 : run BMI function
+- [ ] Enter 2 : run Retirement Estimator function
+- [ ] Enter 0 : exit
+- [ ] Enter 1.1 : error message
+- [ ] Enter A : error message
+- [ ] Enter 3 : error message
+
 </details>
 
 #### BMI Functionality
@@ -16,50 +25,57 @@
 <details>
 <summary>runBMI</summary>
 
-```diff
-- Ensure output is formatted correctly
-```
+- [ ] _ : output is formatted correctly
+
 </details>
 
 <details>
 <summary>getHeight</summary>
 
-```diff
-- Enter negative value for `foot` and `inch`
-- Enter 0 for `foot`
-- Enter 0 for `inch`
-- Enter double for `foot`
-- Enter double for `inch`
-- Enter value > 12 for `inch`
-- Enter value > 9 for `foot`
-- Enter alphabetic characters
-```
+`foot`:
+- [ ] Enter 1 : accept input
+- [ ] Enter 8 : accept input
+- [ ] Enter 5 : accept input
+- [ ] Enter 0 : error message - too low
+- [ ] Enter 9 : error message - too high
+- [ ] Enter 1.1 : error message - not a whole number
+- [ ] Enter A : error message - not a whole number
+
+
+`inch`:
+- [ ] Enter 0 : accept input
+- [ ] Enter 11.9 : accept input
+- [ ] Enter 6 : accept input
+- [ ] Enter -0.1 : error message - too low
+- [ ] Enter 12 : error message - too high
+- [ ] Enter A : error message - not a number
+
 </details>
 
 <details>
 <summary>getWeight</summary>
 
-```diff
-- Enter negative value
-- Enter 0
-- Enter positive value
-- Enter double value
-- Enter alphabetic characters
-```
+- [ ] Enter 0.1 : accept input
+- [ ] Enter 250 : accept input
+- [ ] Enter 0 : error message - too low
+- [ ] Enter A : error message - not a number
+
 </details>
 
 <details>
 <summary>calculateBMI</summary>
 
-```diff
-- Ensure value is calculated correctly
-- Achieve BMI 18.4
-- Achieve BMI 18.5
-- Achieve BMI 24.9
-- Achieve BMI 25
-- Achieve BMI 29.9
-- Achieve BMI 30
-```
+- [ ] Enter Height(1,8) Weight(5.55) : 10 Underweight
+- [ ] Enter Height(1,8) Weight(10.221) : 18.4 Underweight
+- [ ] Enter Height(1,8) Weight(10.276) : 18.5 Normal Weight
+- [ ] Enter Height(5,3) Weight(125) : 22.7 Normal Weight
+- [ ] Enter Height(1,8) Weight(13.831) : 24.9 Normal Weight
+- [ ] Enter Height(1,8) Weight(13.887) : 25.0 Overweight
+- [ ] Enter Height(1,8) Weight(15.276) : 27.5 Overweight
+- [ ] Enter Height(1,8) Weight(16.609) : 29.9 Overweight
+- [ ] Enter Height(1,8) Weight(16.665) : 30.0 Obese
+- [ ] Enter Height(1,8) Weight(22.22) : 40.0 Obese
+
 </details>
 
 #### Retirment Age Calculator Functionality
@@ -67,63 +83,56 @@
 <details>
 <summary>runRetirementCalculator</summary>
 
-```diff
-- Ensure output is formatted correctly
-```
+- [ ] _ : output is formatted correctly
+
 </details>
 <details>
 <summary>getCurrentAge</summary>
 
-```diff
-- Enter negative value
-- Enter 0
-- Enter 1
-- Enter 99
-- Enter 100
-- Enter double value
-- Enter alphabetic characters
-```
+- [ ] Enter 1 : accept input
+- [ ] Enter 99 : accept input
+- [ ] Enter 50 : accept input
+- [ ] Enter 0 : error message - too low
+- [ ] Enter 100 : error message - too high
+- [ ] Enter 1.1 : error message - not a whole number
+- [ ] Enter A : error message - not a whole number
+
 </details>
 <details>
 <summary>getSalary</summary>
 
-```diff
-- Enter negative value
-- Enter 0
-- Enter double value
-- Enter alphabetic characters
-```
+- [ ] Enter 0.1 : accept input
+- [ ] Enter 50000 : accept input
+- [ ] Enter 0 : error message - too low
+- [ ] Enter A : error message - not a number
+
 </details>
 <details>
 <summary>getPercentSaved</summary>
 
-```diff
-- Enter negative value
-- Enter 0
-- Enter 100
-- Enter 101
-- Enter double value
-- Enter alphabetic characters
-```
+- [ ] Enter 0 : accept input
+- [ ] Enter 100 : accept input
+- [ ] Enter 1.1 : accept input
+- [ ] Enter -0.1 : error message - too low
+- [ ] Enter 100.1 : error message - too high
+- [ ] Enter A : error message - not a number
+
 </details>
 <details>
 <summary>getSaveGoal</summary>
 
-```diff
-- Enter negative value
-- Enter 0
-- Enter double value
-- Enter alphabetic characters
-```
+- [ ] Enter 0.1 : accept input
+- [ ] Enter 50000 : accept input
+- [ ] Enter 0 : error message - too low
+- [ ] Enter A : error message - not a number
+
 </details>
 <details>
 <summary>calculateRetirementAge</summary>
 
-```diff
-- Ensure value is calculated correctly
-- Achieve value less than 100
-- Achieve value equal to 100
-- Achieve value greater than 100
-- Achieve value less than current age
-```
+- [ ] Enter Age(10) Salary(10) %Saved(74.0741) Goal(5) : Met 11
+- [ ] Enter Age(10) Salary(10) %Saved(74.0741) Goal(890) : Met 99
+- [ ] Enter Age(10) Salary(10) %Saved(74.0741) Goal(400) : Met 50
+- [ ] Enter Age(10) Salary(10) %Saved(74.0741) Goal(900) : Not met - too old
+
 </details>

@@ -4,7 +4,7 @@ simplicity of this assignment, this project will be primarily function
 based with minimal object orientation.
 
 **void main()**
-A looping main menu offering the user a number of choices.
+A looping main menu offering the user several choices.
 
 ---
 **void runBMI()**
