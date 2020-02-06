@@ -189,7 +189,7 @@ def getPercentSaved():
     percentageSaved = input("  %: ")
 
     try:
-      percentageSaved = int(percentageSaved)
+      percentageSaved = float(percentageSaved)
     except:
       # Non float values
       input("\tThat is not a number")
