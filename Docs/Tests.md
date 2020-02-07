@@ -130,7 +130,6 @@ Tests are written in the format `<input> : <expected behavior> - <reason>` and w
 <details>
 <summary>calculateRetirementAge</summary>
 
-- [ ] Enter Age(10) Salary(10) %Saved(74.0741) Goal(10) : Met 11
 - [ ] Enter Age(10) Salary(10) %Saved(74.0741) Goal(890) : Met 99
 - [ ] Enter Age(10) Salary(10) %Saved(74.0741) Goal(400) : Met 50
 - [ ] Enter Age(10) Salary(10) %Saved(74.0741) Goal(900) : Not met - too old
