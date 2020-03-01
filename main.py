@@ -1,25 +1,8 @@
-def main():
-  while(True):
-    # Print out main menu
-    print("Please make a selection:");
-    print(" (1) Calculate BMI");
-    print(" (2) Calculate retirement age");
-    print(" (0) Exit");
-    choice = input(" : ");
+from browser import document
 
-    # Calculate BMI
-    if (choice == '1'):
-      runBMI()
-    # Calculate retirment age
-    elif (choice == '2'):
-      runRetirementCalculator()
-    # Exit
-    elif (choice == '0'):
-      break
-    # Bad input
-    else:
-      input("\nThat does not appear to be a choice\n")
-      continue
+def setupEvents():
+  document["calculateBMI"].bind("click", runBMI)
+  document["calculateRetirement"].bind("click", runRetirementCalculator)
 
 # Helpers associated with getting user's BMI
 def runBMI():
@@ -235,6 +218,3 @@ def calculateRetirementAge(age, salary, savingPercentage, saveGoal):
     print("| Age: " + str(ageMet))
 
   print("-----\n")
-
-if (__name__ == "__main__"):
-  main()
