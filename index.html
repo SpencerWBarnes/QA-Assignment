@@ -14,29 +14,81 @@
       <h1> Software Testing and Quality Assurance Assignment </h1>
     </div>
     <div class="container">
+      <div class="row">
       
-      <div class="card my-2 text-center">
-        <h4 class="card-header"> Calculate BMI </h4>
-        <div class="card-body">
-          <div class="card-text">
-            <p> Height </p>
-            <div class="pl-1">
-              <p> Feet </p>
-              <input type="range" class="custom-range" min="1" max="9" step="1" id="feet">
-              <p> Inches </p>
-              <input type="range" class="custom-range" min="0" max="11" step="0.1" id="inches">
+        <div class="card my-4 text-center mx-auto">
+          <h4 class="card-header"> Calculate BMI </h4>
+          <div class="card-body">
+            <div class="card-text">
+              
+              <label class="mb-0"> Height </label>
+              <div class="card text-left mx-auto col-8">
+                <div class="card-body">
+                  <label id="feetLabel" class="mb-0"> Feet: </label>
+                  <input id="feet" type="range" class="custom-range" min="1" max="9" step="1">
+                  
+                  <label id="inchesLabel" class="mt-3 mb-0"> Inches: </label>
+                  <input id="inches" type="range" class="custom-range" min="0" max="11" step="0.1">
+                </div>
+              </div>
+
+              <label class="mb-0 mt-3"> Weight </label>
+              <div class="card text-left mx-auto col-8">
+                <div class="card-body">                  
+                  <label class="mb-0"> Pounds: </label>
+                  <input id="weight" type="text" class="form-control">
+                </div>
+              </div>
+
             </div>
+            <hr>
+            <button id="calculateBMI" class="btn btn-primary">Run calculation</button>
+            <br>
+            <label id="bmiResult" class="mt-3"> Calculated BMI: 30 <br> BMI Category: Normal weight </label>
           </div>
         </div>
-      </div>
 
-      <div class="card my-2 text-center">
-        <h4 class="card-header"> Functionality </h4>
-        <div class="card-body">
-          <h4 class="card-title"> Functionality </h4>
-          <p class="card-text text-left"> Description </p>
+        <div class="card my-4 text-center mx-auto">
+          <h4 class="card-header"> Retirment Calculator </h4>
+          <div class="card-body">
+            <div class="card-text">
+              
+              <label class="mb-0"> Age </label>
+              <div class="card text-left mx-auto col-8">
+                <div class="card-body">
+                  <label id="currentAgeLabel" class="mb-0"> Current age: </label>
+                  <input id="currentAge" type="range" class="custom-range" min="1" max="99" step="1" >
+                </div>
+              </div>
+
+              <label class="mb-0 mt-3"> Salary </label>
+              <div class="card text-left mx-auto col-8">
+                <div class="card-body">
+                  <label class="mb-0"> Annual earnings: </label>
+                  <input id="salary" type="text" class="form-control">
+                </div>
+              </div>
+
+              <label class="mb-0 mt-3"> Savings </label>
+              <div class="card text-left mx-auto col-8">
+                <div class="card-body">
+                  <label id="percentSavedLabel" class="mb-0"> Percent Saved (%): </label>
+                  <input id="percentSaved" type="range" class="custom-range" min="1" max="99" step="0.5">
+
+                  <label class="mb-0"> Save Goal ($): </label>
+                  <input id="saveGoal" type="text" class="form-control">
+                </div>
+              </div>
+
+            </div>
+            <hr>
+            <button id="calculateRetirement" class="btn btn-primary">Run calculation</button>
+            <br>
+            <label id="retirementResult" class="mt-3"> Goal: Met <br> Age: 55 </label>
+          </div>
         </div>
-      </div>  
+
+      </div>
 
     </div>
 
