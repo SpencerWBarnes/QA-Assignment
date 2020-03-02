@@ -9,12 +9,10 @@ def runBMI(event):
   # Lead in with title
   print("\nCalculating BMI")
   # Expected input
-  print(" Getting height, enter height in feet then inches")
   height = getHeight()
   print(" Height: " + height)
 
   # Expected input
-  print("\n Getting weight, enter weight in pounds")
   weight = getWeight()
   print(" Weight: " + weight)
 
@@ -22,28 +20,29 @@ def runBMI(event):
   calculateBMI(height, weight)
 
 def getHeight():
-  height = document["feet"].value * 12
-  height = height + document["inches"].value
+  height = int(document["feet"].value) * 12
+  print(" Feet: " + height)
+  height = int(height) + int(document["inches"].value)
   return height
 
 def getWeight():
   weight = 0
   
   print("\tMust be a number greater than 0")
-  weight = document["pounds"].value
+  weight = document["weight"].value
 
   try:
     weight = float(weight)
   except:
     # Non float values
-    input("\tThat is not a number")
+    print("\tThat is not a number")
     return "That is not a number"
 
   # x > 0
   if (weight > 0):
     return weight
   else:
-    input("\tThat is too low")
+    print("\tThat is too low")
     return "That is too low"
 
 def calculateBMI(height, weight):
