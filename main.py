@@ -8,7 +8,21 @@ def setupEvents():
   document["feet"].bind("input", feetOnChange)
   document["inches"].bind("input", inchesOnChange)
   document["weight"].bind("input", weightOnChange)
+  
+  document["currentAge"].bind("input", currentAgeOnChange)
+  document["salary"].bind("input", salaryOnChange)
+  document["percentSaved"].bind("input", percentSavedOnChange)
+  document["saveGoal"].bind("input", saveGoalOnChange)
   print("Set up all event listeners")
+
+  feetOnChange("")
+  inchesOnChange("")
+  weightOnChange("")
+  currentAgeOnChange("")
+  salaryOnChange("")
+  percentSavedOnChange("")
+  saveGoalOnChange("")
+  print("Ran all event listeners")
 
 # Helpers associated with getting user's BMI
 def runBMI(event):
@@ -23,6 +37,7 @@ def runBMI(event):
   print(" Weight: " + str(weight))
 
   if (type(height) != float or type(weight) != float):
+    document["bmiResult"].innerHTML = ""
     return
 
   print("\n Results:")
@@ -220,3 +235,19 @@ def weightOnChange(event):
 
   print("- \t " + str(warning))
   document["weightWarning"].textContent = warning;
+
+def currentAgeOnChange(event):
+  value = document["currentAge"].value
+  print("- onChange: Current age " + str(value))
+  document["currentAgeLabel"].textContent = "Current age: " + str(value);
+
+def salaryOnChange(event):
+  pass
+
+def percentSavedOnChange(event):
+  value = document["percentSaved"].value
+  print("- onChange: Percent Saved " + str(value))
+  document["percentSavedLabel"].textContent = "Percent Saved (%): " + str(value) + "%";
+
+def saveGoalOnChange(event):
+  pass
