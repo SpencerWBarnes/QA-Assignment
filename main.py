@@ -7,7 +7,7 @@ def setupEvents():
 
   document["feet"].bind("change", feetOnChange)
   document["inches"].bind("change", inchesOnChange)
-  document["weight"].bind("change", weightOnChange)
+  document["weight"].bind("keyup", weightOnChange)
   print("Set up all event listeners")
 
 # Helpers associated with getting user's BMI
@@ -196,12 +196,12 @@ def calculateRetirementAge(age, salary, savingPercentage, saveGoal):
 def feetOnChange(event):
   value = document["feet"].value
   print("- onChange: Feet " + str(value))
-  document["feetLabel"].value = "Feet: " + str(value);
+  document["feetLabel"].textContent = "Feet: " + str(value);
 
 def inchesOnChange(event):
   value = document["inches"].value
   print("- onChange: Inches " + str(value))
-  document["inchesLabel"].value = "Inches: " + str(value);
+  document["inchesLabel"].textContent = "Inches: " + str(value);
 
 def weightOnChange(event):
   value = document["weight"].value
@@ -218,4 +218,4 @@ def weightOnChange(event):
     # Non float values
     warning = "That is not a number"
 
-  document["weightWarning"].value = warning;
+  document["weightWarning"].textContent = warning;
