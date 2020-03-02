@@ -157,7 +157,7 @@ def calculateRetirementAge(age, salary, savingPercentage, saveGoal):
   if (ageMet >= 100):
     output = output + "Not met"
   else:
-    output = output + "Met <br> Age: " + str(ageMet))
+    output = output + "Met <br> Age: " + str(ageMet)
 
   document["retirementResult"].innerHTML = output
 
