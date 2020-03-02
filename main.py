@@ -3,10 +3,12 @@ from browser import document
 def setupEvents():
   document["calculateBMI"].bind("click", runBMI)
   document["calculateRetirement"].bind("click", runRetirementCalculator)
+  print("Set up all buttons")
 
   document["feet"].bind("onChange", feetOnChange)
   document["inches"].bind("onChange", inchesOnChange)
   document["weight"].bind("onchange", weightOnChange)
+  print("Set up all event listeners")
 
 # Helpers associated with getting user's BMI
 def runBMI(event):
@@ -193,14 +195,17 @@ def calculateRetirementAge(age, salary, savingPercentage, saveGoal):
 # User input functions
 def feetOnChange(event):
   value = document["feet"].value
+  print("- onChange: Feet " + str(value))
   document["feetLabel"].value = "Feet: " + str(value);
 
 def inchesOnChange(event):
   value = document["inches"].value
+  print("- onChange: Inches " + str(value))
   document["inchesLabel"].value = "Inches: " + str(value);
 
 def weightOnChange(event):
   value = document["weight"].value
+  print("- onChange: Weight " + str(value))
   warning = ""
 
   try:
