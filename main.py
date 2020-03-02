@@ -5,9 +5,9 @@ def setupEvents():
   document["calculateRetirement"].bind("click", runRetirementCalculator)
   print("Set up all buttons")
 
-  document["feet"].bind("change", feetOnChange)
-  document["inches"].bind("change", inchesOnChange)
-  document["weight"].bind("keyup", weightOnChange)
+  document["feet"].bind("input", feetOnChange)
+  document["inches"].bind("input", inchesOnChange)
+  document["weight"].bind("input", weightOnChange)
   print("Set up all event listeners")
 
 # Helpers associated with getting user's BMI
@@ -218,4 +218,5 @@ def weightOnChange(event):
     # Non float values
     warning = "That is not a number"
 
+  print("-                    " + str(warning))
   document["weightWarning"].textContent = warning;
