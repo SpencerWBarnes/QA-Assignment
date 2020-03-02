@@ -16,19 +16,21 @@ def runBMI(event):
   weight = getWeight()
   print(" Weight: " + str(weight))
 
+  if (type(height) != float or type(weight) != float):
+    return
+
   print("\n Results:")
   calculateBMI(height, weight)
 
 def getHeight():
   height = int(document["feet"].value) * 12
   print(" Feet: " + str(height))
-  height = int(height) + int(document["inches"].value)
+  height = float(height) + float(document["inches"].value)
   return height
 
 def getWeight():
   weight = 0
   
-  print("\tMust be a number greater than 0")
   weight = document["weight"].value
 
   try:
