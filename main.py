@@ -58,19 +58,19 @@ def calculateBMI(height, weight):
   bmi = (weight * 0.45) / ((height * 0.025)**2)
   bmi = round(bmi,1)
 
-  print("-----")
-  print("| BMI: "+ str(bmi))
-  print("| Cat: ", end='')
-  if (bmi < 18.5):
-    print("Underweight")
-  elif (bmi >= 18.5 and bmi <= 24.9):
-    print("Normal weight")
-  elif (bmi >= 25 and bmi <= 29.9):
-    print("Overweight")
-  else:
-    print("Obese")
+  output = "Calculated BMI: " + str(bmi) + "<br> BMI Category: "
 
-  print("-----\n")
+  if (bmi < 18.5):
+    output = output + "Underweight"
+  elif (bmi >= 18.5 and bmi <= 24.9):
+    output = output + "Normal weight"
+  elif (bmi >= 25 and bmi <= 29.9):
+    output = output + "Overweight"
+  else:
+    output = output + "Obese"
+
+  print(output)
+  document["bmiResult"].textContent = output
 
 # Helper associated with getting user's estimated retirement age
 def runRetirementCalculator(event):
