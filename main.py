@@ -10,18 +10,18 @@ def runBMI(event):
   print("\nCalculating BMI")
   # Expected input
   height = getHeight()
-  print(" Height: " + height)
+  print(" Height: " + str(height))
 
   # Expected input
   weight = getWeight()
-  print(" Weight: " + weight)
+  print(" Weight: " + str(weight))
 
   print("\n Results:")
   calculateBMI(height, weight)
 
 def getHeight():
   height = int(document["feet"].value) * 12
-  print(" Feet: " + height)
+  print(" Feet: " + str(height))
   height = int(height) + int(document["inches"].value)
   return height
 
@@ -33,6 +33,7 @@ def getWeight():
 
   try:
     weight = float(weight)
+    print(" Pounds: " + str(weight))
   except:
     # Non float values
     print("\tThat is not a number")
