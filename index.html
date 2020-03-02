@@ -64,20 +64,22 @@
 
               <label class="mb-0 mt-3"> Salary </label>
               <div class="card text-left mx-auto col-8">
-                <div class="card-body">
+                <div class="card-body pb-0">
                   <label class="mb-0"> Annual earnings: </label>
                   <input id="salary" type="text" class="form-control">
+                  <label id="salaryWarning" class="text-danger"></label>
                 </div>
               </div>
 
               <label class="mb-0 mt-3"> Savings </label>
               <div class="card text-left mx-auto col-8">
-                <div class="card-body">
+                <div class="card-body pb-0">
                   <label id="percentSavedLabel" class="mb-0"> Percent Saved (%): </label>
                   <input id="percentSaved" type="range" class="custom-range" min="1" max="99" step="0.5">
 
                   <label class="mb-0"> Save Goal ($): </label>
                   <input id="saveGoal" type="text" class="form-control">
+                  <label id="saveGoalWarning" class="text-danger"></label>
                 </div>
               </div>
 

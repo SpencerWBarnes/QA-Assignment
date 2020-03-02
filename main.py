@@ -197,7 +197,17 @@ def currentAgeOnChange(event):
   document["currentAgeLabel"].textContent = "Current age: " + str(value);
 
 def salaryOnChange(event):
-  pass
+  value = document["salary"].value
+  warning = ""
+
+  try:
+    value = float(value)
+    if (value <= 0):
+      warning = "That is too low"
+  except:
+    warning = "That is not a number"
+
+  document["salaryWarning"].textContent = warning
 
 def percentSavedOnChange(event):
   value = document["percentSaved"].value
@@ -205,4 +215,14 @@ def percentSavedOnChange(event):
   document["percentSavedLabel"].textContent = "Percent Saved (%): " + str(value) + "%";
 
 def saveGoalOnChange(event):
-  pass
+  value = document["saveGoal"].value
+  warning = ""
+
+  try:
+    value = float(value)
+    if (value <= 0):
+      warning = "That is too low"
+  except:
+    warning = "That is not a number"
+
+  document["saveGoalWarning"].textContent = warning
