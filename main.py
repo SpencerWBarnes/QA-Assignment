@@ -5,9 +5,9 @@ def setupEvents():
   document["calculateRetirement"].bind("click", runRetirementCalculator)
   print("Set up all buttons")
 
-  document["feet"].bind("onChange", feetOnChange)
-  document["inches"].bind("onChange", inchesOnChange)
-  document["weight"].bind("onchange", weightOnChange)
+  document["feet"].bind("change", feetOnChange)
+  document["inches"].bind("change", inchesOnChange)
+  document["weight"].bind("change", weightOnChange)
   print("Set up all event listeners")
 
 # Helpers associated with getting user's BMI
