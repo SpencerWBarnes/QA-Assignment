@@ -17,12 +17,9 @@ def setupEvents():
 
   feetOnChange("")
   inchesOnChange("")
-  weightOnChange("")
   currentAgeOnChange("")
-  salaryOnChange("")
   percentSavedOnChange("")
-  saveGoalOnChange("")
-  print("Ran all event listeners")
+  print("Ran slider's first feedback")
 
 # Helpers associated with getting user's BMI
 def runBMI(event):
@@ -50,8 +47,6 @@ def getHeight():
   return height
 
 def getWeight():
-  weight = 0
-  
   weight = document["weight"].value
 
   try:
@@ -92,104 +87,65 @@ def runRetirementCalculator(event):
   # Lead in with title
   print("\nCalculating age of retirement")
   
-  # Expected input
-  print(" Getting current age, enter age in years")
   age = getCurrentAge()
+  print(" Age: " + str(age))
 
-  # Expected input
-  print(" Getting annual salary, enter salary in $ per year")
   salary = getSalary()
+  print(" Salary: " + str(salary))
 
-  # Expected input
-  print(" Getting percent of salary saved, enter savings as a %")
   percentageSaved = getPercentSaved()
+  print(" Percent Saved: " + str(percentageSaved))
 
-  # Expected input
-  print(" Getting save goal, enter goal in $")
   saveGoal = getSaveGoal()
+  print(" Save goal: " + str(saveGoal))
+
+  if (type(age) != int or type(salary) != float or type(percentageSaved) != float or type(saveGoal) != float):
+    document["retirementResult"].innerHTML = ""
+    return
 
   print("\n Results")
   calculateRetirementAge(age, salary, percentageSaved, saveGoal)
 
 def getCurrentAge():
-  age = 0;
-  # Repeatedly ask for input until provided
-  while(True):
-    print("\tMust be a whole number, greater than 0, and less than 100")
-    age = input("  years: ")
-
-    try:
-      age = int(age)
-    except:
-      # Non whole number values
-      input("\tThat is not a whole number")
-      continue
-
-    # 0 < x < 100
-    if (0 < age and age < 100):
-      return age
-    else:
-      input("\tThat is too high or too low")
+  return int(document["currentAge"].value)
 
 def getSalary():
-  salary = 0;
-  # Repeatedly ask for input until provided
-  while(True):
-    print("\tMust be a number and greater than 0")
-    salary = input("  $/yr: ")
+  salary = document["salary"].value
 
-    try:
-      salary = float(salary)
-    except:
-      # Non float values
-      input("\tThat is not a number")
-      continue
+  try:
+    salary = float(salary)
+    print(" Salary: " + str(salary))
+  except:
+    # Non float values
+    print("\tThat is not a number")
+    return "That is not a number"
 
-    # x > 0
-    if (salary > 0):
-      return salary
-    else:
-      input("\tThat is too low")
+  # x > 0
+  if (salary > 0):
+    return salary
+  else:
+    print("\tThat is too low")
+    return "That is too low"
 
 def getPercentSaved():
-  percentageSaved = 0;
-  # Repeatedly ask for input until provided
-  while(True):
-    print("\tMust be a number, 0 or greater, and 100 or less")
-    percentageSaved = input("  %: ")
-
-    try:
-      percentageSaved = float(percentageSaved)
-    except:
-      # Non float values
-      input("\tThat is not a number")
-      continue
-
-    # 0 < x <= 100
-    if (0 < percentageSaved and percentageSaved <= 100):
-      return percentageSaved * 1.35
-    else:
-      input("\tThat is too high or too low")
+  return float(document["percentSaved"].value)
 
 def getSaveGoal():
-  saveGoal = 0
-  # Repeatedly ask for input until provided
-  while(True):
-    print("\tMust be a number and greater than 0")
-    saveGoal = input("  $: ")
+  saveGoal = document["saveGoal"].value
 
-    try:
-      saveGoal = float(saveGoal)
-    except:
-      # Non float values
-      input("\tThat is not a number")
-      continue
+  try:
+    saveGoal = float(saveGoal)
+  except:
+    # Non float values
+    print("\tThat is not a number")
+    return "That is not a number"
 
-    # x > 0
-    if (saveGoal > 0):
-      return saveGoal
-    else:
-      input("\tThat is too low")
+  # x > 0
+  if (saveGoal > 0):
+    return saveGoal
+  else:
+    print("\tThat is too low")
+    return "That is too low"
 
 def calculateRetirementAge(age, salary, savingPercentage, saveGoal):
   years = saveGoal / (salary * (savingPercentage/100))
