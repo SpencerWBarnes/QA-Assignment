@@ -4,6 +4,10 @@ def setupEvents():
   document["calculateBMI"].bind("click", runBMI)
   document["calculateRetirement"].bind("click", runRetirementCalculator)
 
+  document["feet"].bind("onChange", feetOnChange)
+  document["inches"].bind("onChange", inchesOnChange)
+  document["weight"].bind("onchange", weightOnChange)
+
 # Helpers associated with getting user's BMI
 def runBMI(event):
   # Lead in with title
@@ -184,3 +188,29 @@ def calculateRetirementAge(age, salary, savingPercentage, saveGoal):
     print("| Age: " + str(ageMet))
 
   print("-----\n")
+
+
+# User input functions
+def feetOnChange(event):
+  value = document["feet"].value
+  document["feetLabel"].value = "Feet: " + str(value);
+
+def inchesOnChange(event):
+  value = document["inches"].value
+  document["inchesLabel"].value = "Inches: " + str(value);
+
+def weightOnChange(event):
+  value = document["weight"].value
+  warning = ""
+
+  try:
+    value = float(value)
+    # x > 0
+    if (weight <= 0):
+      warning = "That is too low"
+
+  except:
+    # Non float values
+    warning = "That is not a number"
+
+  document["weightWarning"].value = warning;
