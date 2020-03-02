@@ -152,15 +152,14 @@ def calculateRetirementAge(age, salary, savingPercentage, saveGoal):
   ageMet = years + age
   ageMet = round(ageMet)
 
-  print("-----")
-  print("| Goal: ", end='')
+  output = "Goal: "
+  
   if (ageMet >= 100):
-    print("Not met")
+    output = output + "Not met"
   else:
-    print("Met")
-    print("| Age: " + str(ageMet))
+    output = output + "Met <br> Age: " + str(ageMet))
 
-  print("-----\n")
+  document["retirementResult"].innerHTML = output
 
 
 # User input functions
