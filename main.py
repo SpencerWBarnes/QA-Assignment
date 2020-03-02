@@ -70,7 +70,7 @@ def calculateBMI(height, weight):
     output = output + "Obese"
 
   print(output)
-  document["bmiResult"].textContent = output
+  document["bmiResult"].innerHTML = output
 
 # Helper associated with getting user's estimated retirement age
 def runRetirementCalculator(event):
@@ -211,12 +211,12 @@ def weightOnChange(event):
   try:
     value = float(value)
     # x > 0
-    if (weight <= 0):
+    if (value <= 0):
       warning = "That is too low"
 
   except:
     # Non float values
     warning = "That is not a number"
 
-  print("-                    " + str(warning))
+  print("- \t " + str(warning))
   document["weightWarning"].textContent = warning;
