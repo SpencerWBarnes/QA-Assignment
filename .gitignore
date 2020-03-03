@@ -353,7 +353,7 @@ MigrationBackup/
 .ionide/
 
 # User added ignores
-*.txt
+Notes.txt
 .vscode/launch.json
 unitTests.py
 .vscode/settings.json
