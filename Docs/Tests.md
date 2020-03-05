@@ -36,10 +36,10 @@ Tests are written in the format `<input> : <expected behavior> - <reason>` and w
 - [x] Enter 1 : accept input
 - [x] Enter 8 : accept input
 - [x] Enter 5 : accept input
-- [x] Enter 0 : error message - too low
-- [x] Enter 9 : error message - too high
-- [x] Enter 1.1 : error message - not a whole number
-- [x] Enter A : error message - not a whole number
+- [x] ~~Enter 0 : error message - too low~~
+- [x] ~~Enter 9 : error message - too high~~
+- [x] ~~Enter 1.1 : error message - not a whole number~~
+- [x] ~~Enter A : error message - not a whole number~~
 
 
 `inch`:

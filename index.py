@@ -1,4 +1,5 @@
 from browser import document
+import client
 
 def setupEvents():
   document["calculateBMI"].bind("click", runBMI)
@@ -33,7 +34,7 @@ def runBMI(event):
   weight = getWeight()
   print(" Weight: " + str(weight))
 
-  if (type(height) != float or type(weight) != float):
+  if not(client.validBMIValues(height, weight)):
     document["bmiResult"].innerHTML = ""
     return
 
@@ -41,43 +42,21 @@ def runBMI(event):
   calculateBMI(height, weight)
 
 def getHeight():
-  height = int(document["feet"].value) * 12
-  print(" Feet: " + str(height))
-  height = float(height) + float(document["inches"].value)
-  return height
+  feet = int(document["feet"].value)
+  inches = float(document["inches"].value)
+  return client.getHeight(feet, inches)
 
 def getWeight():
   weight = document["weight"].value
 
-  try:
-    weight = float(weight)
-    print(" Pounds: " + str(weight))
-  except:
-    # Non float values
-    print("\tThat is not a number")
-    return "That is not a number"
-
-  # x > 0
-  if (weight > 0):
+  (valid, weight) = client.validWeight(weight)
+  if (valid):
     return weight
-  else:
-    print("\tThat is too low")
-    return "That is too low"
+  return "Invalid weight value"
 
 def calculateBMI(height, weight):
-  bmi = (weight * 0.45) / ((height * 0.025)**2)
-  bmi = round(bmi,1)
-
-  output = "Calculated BMI: " + str(bmi) + "<br> BMI Category: "
-
-  if (bmi < 18.5):
-    output = output + "Underweight"
-  elif (bmi >= 18.5 and bmi <= 24.9):
-    output = output + "Normal weight"
-  elif (bmi >= 25 and bmi <= 29.9):
-    output = output + "Overweight"
-  else:
-    output = output + "Obese"
+  (bmi, category) = client.getBMI(height, weight)
+  output = "Calculated BMI: " + str(bmi) + "<br> BMI Category: " + str(category)
 
   print(output)
   document["bmiResult"].innerHTML = output
@@ -93,18 +72,18 @@ def runRetirementCalculator(event):
   salary = getSalary()
   print(" Salary: " + str(salary))
 
-  percentageSaved = getPercentSaved()
-  print(" Percent Saved: " + str(percentageSaved))
+  percentSaved = getPercentSaved()
+  print(" Percent Saved: " + str(percentSaved))
 
   saveGoal = getSaveGoal()
   print(" Save goal: " + str(saveGoal))
 
-  if (type(age) != int or type(salary) != float or type(percentageSaved) != float or type(saveGoal) != float):
+  if not(client.validRetirementValues(age, salary, percentSaved, saveGoal)):
     document["retirementResult"].innerHTML = ""
     return
 
   print("\n Results")
-  calculateRetirementAge(age, salary, percentageSaved, saveGoal)
+  calculateRetirementAge(age, salary, percentSaved, saveGoal)
 
 def getCurrentAge():
   return int(document["currentAge"].value)
@@ -112,20 +91,10 @@ def getCurrentAge():
 def getSalary():
   salary = document["salary"].value
 
-  try:
-    salary = float(salary)
-    print(" Salary: " + str(salary))
-  except:
-    # Non float values
-    print("\tThat is not a number")
-    return "That is not a number"
-
-  # x > 0
-  if (salary > 0):
+  (valid, salary) = client.validSalary(salary)
+  if (valid):
     return salary
-  else:
-    print("\tThat is too low")
-    return "That is too low"
+  return "Invalid salary value"
 
 def getPercentSaved():
   return float(document["percentSaved"].value)
@@ -133,31 +102,20 @@ def getPercentSaved():
 def getSaveGoal():
   saveGoal = document["saveGoal"].value
 
-  try:
-    saveGoal = float(saveGoal)
-  except:
-    # Non float values
-    print("\tThat is not a number")
-    return "That is not a number"
+  (valid, saveGoal) = client.validSaveGoal(saveGoal)
 
-  # x > 0
-  if (saveGoal > 0):
+  if (valid):
     return saveGoal
-  else:
-    print("\tThat is too low")
-    return "That is too low"
+  return "Invalid save goal value"
 
-def calculateRetirementAge(age, salary, savingPercentage, saveGoal):
-  years = saveGoal / (salary * (savingPercentage/100))
-  ageMet = years + age
-  ageMet = round(ageMet)
+def calculateRetirementAge(age, salary, precentSaved, saveGoal):
+  (met, ageMet) = client.getRetirementAge(age, salary, precentSaved, saveGoal)
 
   output = "Goal: "
-  
-  if (ageMet >= 100):
-    output = output + "Not met"
-  else:
+  if (met):
     output = output + "Met <br> Age: " + str(ageMet)
+  else:
+    output = output + "Not met"
 
   document["retirementResult"].innerHTML = output
 
@@ -175,54 +133,35 @@ def inchesOnChange(event):
 
 def weightOnChange(event):
   value = document["weight"].value
-  print("- onChange: Weight " + str(value))
-  warning = ""
+  (valid, value) = client.validWeight(value)
 
-  try:
-    value = float(value)
-    # x > 0
-    if (value <= 0):
-      warning = "That is too low"
-
-  except:
-    # Non float values
-    warning = "That is not a number"
-
-  print("- \t " + str(warning))
-  document["weightWarning"].textContent = warning;
+  if (valid):
+    document["weightWarning"].textContent = ""
+  else:
+    document["weightWarning"].textContent = "Invalid weight value"
 
 def currentAgeOnChange(event):
   value = document["currentAge"].value
-  print("- onChange: Current age " + str(value))
   document["currentAgeLabel"].textContent = "Current age: " + str(value);
 
 def salaryOnChange(event):
   value = document["salary"].value
-  warning = ""
+  (valid, value) = client.validSalary(value)
 
-  try:
-    value = float(value)
-    if (value <= 0):
-      warning = "That is too low"
-  except:
-    warning = "That is not a number"
-
-  document["salaryWarning"].textContent = warning
+  if (valid):
+    document["salaryWarning"].textContent = ""
+  else:
+    document["salaryWarning"].textContent = "Invalid salary value"
 
 def percentSavedOnChange(event):
   value = document["percentSaved"].value
-  print("- onChange: Percent Saved " + str(value))
   document["percentSavedLabel"].textContent = "Percent Saved (%): " + str(value) + "%";
 
 def saveGoalOnChange(event):
   value = document["saveGoal"].value
-  warning = ""
+  (valid, value) = client.validSaveGoal(value)
 
-  try:
-    value = float(value)
-    if (value <= 0):
-      warning = "That is too low"
-  except:
-    warning = "That is not a number"
-
-  document["saveGoalWarning"].textContent = warning
+  if (valid):
+    document["saveGoalWarning"].textContent = ""
+  else:
+    document["saveGoalWarning"].textContent = "Invalid save goal value"
