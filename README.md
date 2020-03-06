@@ -32,3 +32,8 @@ If you wish to see a description of each function, the restrictions on each func
 
 ## Tests
 If you wish to see a list of all tests assocciated with each function as well their result, go to the test doc in [Docs/Tests.md](/Docs/Tests.md)
+
+## Statuses
+Production: [![Build Status](https://travis-ci.org/SpencerWBarnes/QA-Assignment.svg?branch=master)](https://travis-ci.org/SpencerWBarnes/QA-Assignment) [![Heroku](http://heroku-badge.herokuapp.com/?app=qa-assignment-sb2726)](https://qa-assignment-sb2726.herokuapp.com/)  
+
+Staging: [![Build Status](https://travis-ci.org/SpencerWBarnes/QA-Assignment.svg?branch=staging)](https://travis-ci.org/SpencerWBarnes/QA-Assignment) [![Heroku](http://heroku-badge.herokuapp.com/?app=qa-assignment-sb2726-staging)](https://qa-assignment-sb2726-staging.herokuapp.com/)
