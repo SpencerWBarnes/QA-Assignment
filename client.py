@@ -50,7 +50,7 @@ def getBMI(height, weight):
 
 bool validRetirementValues(age, salary, percentSaved, saveGoal)
 
-(string, int) getRetirementAge(age, salary, percentSaved, saveGoal)
+(bool, int) getRetirementAge(age, salary, percentSaved, saveGoal)
 '''
 
 def validSalary(salary):
@@ -83,6 +83,7 @@ def validRetirementValues(age, salary, percentSaved, saveGoal):
   return type(age) == int and type(salary) == float and type(percentSaved) == float and type(saveGoal) == float
 
 def getRetirementAge(age, salary, percentSaved, saveGoal):
+  percentSaved *= 1.35
   years = saveGoal / (salary * (percentSaved/100))
   ageMet = years + age
   ageMet = round(ageMet)
