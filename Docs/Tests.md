@@ -7,18 +7,102 @@ Tests are written in the format `<input> : <expected behavior> - <reason>` and w
 4) Lower exterior
 5) Upper exterior
 6) Unaccepted types
+---
+
+## Unit tests
+
+#### BMI Functionality
 
 <details>
-<summary>main</summary>
+<summary>getHeight</summary>
 
-- [x] Enter 1 : run BMI function
-- [x] Enter 2 : run Retirement Estimator function
-- [x] Enter 0 : exit
-- [x] Enter 1.1 : error message
-- [x] Enter A : error message
-- [x] Enter 3 : error message
+- [ ] Enter (1,0) : 12 - minimum values
+- [ ] Enter (5,5.5) : 65.5 - average values
+- [ ] Enter (8,11.9) : 107.9 - maximum values
 
 </details>
+
+<details>
+<summary>validWeight</summary>
+
+- [ ] Enter 0.1 : (True,Float(0.1)) - minimum value
+- [ ] Enter 250 : (True,Float(250)) - average value
+- [ ] Enter 0 : (False,-) - too low
+- [ ] Enter A : (False,-) - not a number
+
+</details>
+
+<details>
+<summary>validBMIValues</summary>
+
+- [ ] Enter (Float,Float) : True - expected types
+- [ ] Enter (Float,String) : False - bad weight
+- [ ] Enter (Float,None) : False - bad weight
+
+</details>
+
+<details>
+<summary>getBMI</summary>
+
+- [ ] Enter (20,5.55) : (10,Underweight)
+- [ ] Enter (20,10.221) : (18.4,Underweight)
+- [ ] Enter (20,10.276) : (18.5,Normal Weight)
+- [ ] Enter (63,125) : (22.7,Normal Weight)
+- [ ] Enter (20,13.831) : (24.9,Normal Weight)
+- [ ] Enter (20,13.887) : (25.0,Overweight)
+- [ ] Enter (20,15.276) : (27.5,Overweight)
+- [ ] Enter (20,16.609) : (29.9,Overweight)
+- [ ] Enter (20,16.665) : (30.0,Obese)
+- [ ] Enter (20,22.22) : (40.0,Obese)
+
+</details>
+
+#### Retirment Age Calculator Functionality
+
+<details>
+<summary>validSalary</summary>
+
+- [ ] Enter 0.1 : (True,Float(0.1)) - minimum value
+- [ ] Enter 50000 : (True,Float(50000)) - average value
+- [ ] Enter 0 : (False,-) - too low
+- [ ] Enter A : (False,-) - not a number
+
+</details>
+
+<details>
+<summary>validSaveGoal</summary>
+
+- [ ] Enter 0.1 : (True,Float(0.1)) - minimum value
+- [ ] Enter 250000 : (True,Float(250000)) - average value
+- [ ] Enter 0 : (False,-) - too low
+- [ ] Enter A : (False,-) - not a number
+
+</details>
+
+<details>
+<summary>validRetirementValues</summary>
+
+- [ ] Enter (Int,Float,Float,Float) : True - expected values
+- [ ] Enter (Int,String,Float,Float) : False - bad salary
+- [ ] Enter (Int,None,Float,Float) : False - bad salary
+- [ ] Enter (Int,Float,Float,String) : False - bad save goal
+- [ ] Enter (Int,Float,Float,None) : False - bad save goal
+- [ ] Enter (Int,String,Float,String) : False - bad salary and save goal
+- [ ] Enter (Int,None,Float,None) : False - bad salary and save goal
+
+</details>
+
+<details>
+<summary>getRetirementAge</summary>
+
+- [ ] Enter (98,10,74.1,10) : (True,99)
+- [ ] Enter (10,10,74.1,400) : (True,50)
+- [ ] Enter (10,10,74.1,900) : (False,-) - too old
+
+</details>
+
+---
+## End to end tests
 
 #### BMI Functionality
 

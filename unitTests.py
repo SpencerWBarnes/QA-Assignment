@@ -23,10 +23,6 @@ import client
 # def mockOutput(outputResult):
 #   global mockOutputResults.append(outputResult)
 
-# class TestExample(unittest.TestCase):
-#   def test_helloWorld(self):
-#     self.assertEqual("Hello World", "Hello World")
-
 class TestClient(unittest.TestCase):
   def test_getHeight_success(self):
     # Check type

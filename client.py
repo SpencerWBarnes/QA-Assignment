@@ -50,7 +50,7 @@ def getBMI(height, weight):
 
 bool validRetirementValues(age, salary, percentSaved, saveGoal)
 
-(string, int) getRetirementAge(age, salary, percentSaved, saveGoal)
+(bool, int) getRetirementAge(age, salary, percentSaved, saveGoal)
 '''
 
 def validSalary(salary):
