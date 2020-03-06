@@ -16,6 +16,7 @@ Tests are written in the format `<input> : <expected behavior> - <reason>` and w
 <details>
 <summary>getHeight</summary>
 
+- [ ] Enter (5,5.5) : Float - check type
 - [ ] Enter (1,0) : 12 - minimum values
 - [ ] Enter (5,5.5) : 65.5 - average values
 - [ ] Enter (8,11.9) : 107.9 - maximum values
@@ -25,16 +26,18 @@ Tests are written in the format `<input> : <expected behavior> - <reason>` and w
 <details>
 <summary>validWeight</summary>
 
-- [ ] Enter 0.1 : (True,Float(0.1)) - minimum value
-- [ ] Enter 250 : (True,Float(250)) - average value
-- [ ] Enter 0 : (False,-) - too low
-- [ ] Enter A : (False,-) - not a number
+- [ ] Enter '250' : (Bool,Float) - check types
+- [ ] Enter '0.1' : (True,0.1) - minimum value
+- [ ] Enter '250' : (True,250) - average value
+- [ ] Enter '0' : (False,-) - too low
+- [ ] Enter 'A' : (False,-) - not a number
 
 </details>
 
 <details>
 <summary>validBMIValues</summary>
 
+- [ ] Enter (Float,Float) : bool - check type
 - [ ] Enter (Float,Float) : True - expected types
 - [ ] Enter (Float,String) : False - bad weight
 - [ ] Enter (Float,None) : False - bad weight
@@ -44,6 +47,7 @@ Tests are written in the format `<input> : <expected behavior> - <reason>` and w
 <details>
 <summary>getBMI</summary>
 
+- [ ] Enter (63,125) : (Float,String) - check types
 - [ ] Enter (20,5.55) : (10,Underweight)
 - [ ] Enter (20,10.221) : (18.4,Underweight)
 - [ ] Enter (20,10.276) : (18.5,Normal Weight)
@@ -62,26 +66,29 @@ Tests are written in the format `<input> : <expected behavior> - <reason>` and w
 <details>
 <summary>validSalary</summary>
 
-- [ ] Enter 0.1 : (True,Float(0.1)) - minimum value
-- [ ] Enter 50000 : (True,Float(50000)) - average value
-- [ ] Enter 0 : (False,-) - too low
-- [ ] Enter A : (False,-) - not a number
+- [ ] Enter '50000' : (Bool,Float) - check types
+- [ ] Enter '0.1' : (True,0.1) - minimum value
+- [ ] Enter '50000' : (True,50000) - average value
+- [ ] Enter '0' : (False,-) - too low
+- [ ] Enter 'A' : (False,-) - not a number
 
 </details>
 
 <details>
 <summary>validSaveGoal</summary>
 
-- [ ] Enter 0.1 : (True,Float(0.1)) - minimum value
-- [ ] Enter 250000 : (True,Float(250000)) - average value
-- [ ] Enter 0 : (False,-) - too low
-- [ ] Enter A : (False,-) - not a number
+- [ ] Enter '250000' : (Bool,Float) - check types
+- [ ] Enter '0.1' : (True,0.1) - minimum value
+- [ ] Enter '250000' : (True,250000) - average value
+- [ ] Enter '0' : (False,-) - too low
+- [ ] Enter 'A' : (False,-) - not a number
 
 </details>
 
 <details>
 <summary>validRetirementValues</summary>
 
+- [ ] Enter (Int,Float,Float,Float) : Bool - check type
 - [ ] Enter (Int,Float,Float,Float) : True - expected values
 - [ ] Enter (Int,String,Float,Float) : False - bad salary
 - [ ] Enter (Int,None,Float,Float) : False - bad salary
@@ -95,6 +102,7 @@ Tests are written in the format `<input> : <expected behavior> - <reason>` and w
 <details>
 <summary>getRetirementAge</summary>
 
+- [ ] Enter (10,10,74.1,400) : (Bool,Int) - check types
 - [ ] Enter (98,10,74.1,10) : (True,99)
 - [ ] Enter (10,10,74.1,400) : (True,50)
 - [ ] Enter (10,10,74.1,900) : (False,-) - too old
