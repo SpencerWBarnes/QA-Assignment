@@ -83,6 +83,7 @@ def validRetirementValues(age, salary, percentSaved, saveGoal):
   return type(age) == int and type(salary) == float and type(percentSaved) == float and type(saveGoal) == float
 
 def getRetirementAge(age, salary, percentSaved, saveGoal):
+  percentSaved *= 1.35
   years = saveGoal / (salary * (percentSaved/100))
   ageMet = years + age
   ageMet = round(ageMet)
