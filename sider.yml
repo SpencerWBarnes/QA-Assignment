@@ -2,9 +2,9 @@ linter:
   flake8:
     plugins:
       # - flake8-bandit
-      - flake8-builtins
-      - flake8-mypy
-      - pep8-naming
-      - flake8-commas
-      - flake8-quotes
-      - flake8-bugbear
+      # - flake8-builtins
+      # - flake8-mypy
+      # - pep8-naming
+      # - flake8-commas
+      # - flake8-quotes
+      # - flake8-bugbear
