@@ -1,4 +1,4 @@
-# QA-Assignment [![Build Status](https://travis-ci.org/SpencerWBarnes/QA-Assignment.svg?branch=master)](https://travis-ci.org/SpencerWBarnes/QA-Assignment) [![Heroku](http://heroku-badge.herokuapp.com/?app=qa-assignment-sb2726)](https://qa-assignment-sb2726.herokuapp.com/)
+# QA-Assignment [![Build Status](https://travis-ci.org/SpencerWBarnes/QA-Assignment.svg?branch=master)](https://travis-ci.org/SpencerWBarnes/QA-Assignment) [![Heroku](http://heroku-badge.herokuapp.com/?app=qa-assignment-sb2726)](https://qa-assignment-sb2726.herokuapp.com/) [![Coverage Status](https://coveralls.io/repos/github/SpencerWBarnes/QA-Assignment/badge.svg)](https://coveralls.io/github/SpencerWBarnes/QA-Assignment)
 
 This is a repository for the application developed for the assignments given for the course CSE 4283 Software Testing and Quality Assurance.
 
@@ -26,6 +26,6 @@ Heroku and GitHub Pages for automated web deployment
 If you wish to see a list of all tests assocciated with each function as well their result, go to the test doc in [Docs/Tests.md](/Docs/Tests.md)
 
 ## Statuses
-Production: [![Build Status](https://travis-ci.org/SpencerWBarnes/QA-Assignment.svg?branch=master)](https://travis-ci.org/SpencerWBarnes/QA-Assignment) [![Heroku](http://heroku-badge.herokuapp.com/?app=qa-assignment-sb2726)](https://qa-assignment-sb2726.herokuapp.com/)  
+Production: [![Build Status](https://travis-ci.org/SpencerWBarnes/QA-Assignment.svg?branch=master)](https://travis-ci.org/SpencerWBarnes/QA-Assignment) [![Heroku](http://heroku-badge.herokuapp.com/?app=qa-assignment-sb2726)](https://qa-assignment-sb2726.herokuapp.com/) [![Coverage Status](https://coveralls.io/repos/github/SpencerWBarnes/QA-Assignment/badge.svg)](https://coveralls.io/github/SpencerWBarnes/QA-Assignment)  
 
-Staging: [![Build Status](https://travis-ci.org/SpencerWBarnes/QA-Assignment.svg?branch=staging)](https://travis-ci.org/SpencerWBarnes/QA-Assignment) [![Heroku](http://heroku-badge.herokuapp.com/?app=qa-assignment-sb2726-staging)](https://qa-assignment-sb2726-staging.herokuapp.com/)
+Staging: [![Build Status](https://travis-ci.org/SpencerWBarnes/QA-Assignment.svg?branch=staging)](https://travis-ci.org/SpencerWBarnes/QA-Assignment) [![Heroku](http://heroku-badge.herokuapp.com/?app=qa-assignment-sb2726-staging)](https://qa-assignment-sb2726-staging.herokuapp.com/) [![Coverage Status](https://coveralls.io/repos/github/badges/shields/badge.svg?branch=staging)](https://coveralls.io/github/badges/shields?branch=staging)
