@@ -1,7 +1,7 @@
 linter:
   flake8:
     plugins:
-      - flake8-bandit
+      # - flake8-bandit
       - flake8-builtins
       - flake8-mypy
       - pep8-naming
