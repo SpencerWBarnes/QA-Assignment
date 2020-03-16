@@ -21,6 +21,8 @@ Required steps are:
 GitHub <sub> <sup> suprise </sup> </sub> for source control  
 Travis CI for automated unit testing  
 Heroku and GitHub Pages for automated web deployment  
+Coveralls for tests' code coverage  
+Sider for static code analysis  
 
 ## Tests
 If you wish to see a list of all tests assocciated with each function as well their result, go to the test doc in [Docs/Tests.md](/Docs/Tests.md)
