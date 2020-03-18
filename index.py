@@ -20,7 +20,7 @@ def setup_events():
   inches_on_change('')
   current_age_on_change('')
   percent_saved_on_change('')
-  print('Ran slider's first feedback')
+  print("Ran slider's first feedback")
 
 # Helpers associated with getting user's BMI
 def run_BMI(event):
