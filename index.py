@@ -72,18 +72,18 @@ def run_retirement_calculator(event):
   salary = get_salary()
   print(' Salary: ' + str(salary))
 
-  percentSaved = get_percent_saved()
-  print(' Percent Saved: ' + str(percentSaved))
+  percent_saved = get_percent_saved()
+  print(' Percent Saved: ' + str(percent_saved))
 
   saveGoal = get_save_goal()
   print(' Save goal: ' + str(saveGoal))
 
-  if not(client.validRetirementValues(age, salary, percentSaved, saveGoal)):
+  if not(client.validRetirementValues(age, salary, percent_saved, saveGoal)):
     document['retirementResult'].innerHTML = ''
     return
 
   print('\n Results')
-  calculate_retirement_age(age, salary, percentSaved, saveGoal)
+  calculate_retirement_age(age, salary, percent_saved, saveGoal)
 
 def get_current_age():
   return int(document['currentAge'].value)
