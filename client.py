@@ -1,17 +1,17 @@
 '''
-float getHeight(feet, inches)
+float get_height(feet, inches)
 
-(bool, float) validWeight(weight)
+(bool, float) valid_weight(weight)
 
-bool validBMIValues(height, weight)
+bool valid_BMI_values(height, weight)
 
-(float, string) getBMI(height, weight)
+(float, string) get_BMI(height, weight)
 '''
 
-def getHeight(feet, inches):
+def get_height(feet, inches):
   return (int(feet)*12) + float(inches)
 
-def validWeight(weight):
+def valid_weight(weight):
   valid = False;
   try:
     weight = float(weight)
@@ -20,40 +20,40 @@ def validWeight(weight):
       valid = True;
   except:
     # Non float values
-    pass
+    valid = False;
 
   return (valid, weight)
 
-def validBMIValues(height, weight):
+def valid_BMI_values(height, weight):
   return type(height) == float and type(weight) == float
 
-def getBMI(height, weight):
+def get_BMI(height, weight):
   bmi = (weight * 0.45) / ((height * 0.025)**2)
   bmi = round(bmi,1)
 
-  category = ""
+  category = ''
   if (bmi < 18.5):
-    category = "Underweight"
+    category = 'Underweight'
   elif (bmi >= 18.5 and bmi <= 24.9):
-    category = "Normal weight"
+    category = 'Normal weight'
   elif (bmi >= 25 and bmi <= 29.9):
-    category = "Overweight"
+    category = 'Overweight'
   else:
-    category = "Obese"
+    category = 'Obese'
 
   return (bmi, category)
 
 '''
-(bool, float) validSalary(salary)
+(bool, float) valid_salary(salary)
 
-(bool, float) validSaveGoal(saveGoal)
+(bool, float) valid_save_goal(save_goal)
 
-bool validRetirementValues(age, salary, percentSaved, saveGoal)
+bool valid_retirement_values(age, salary, percent_saved, save_goal)
 
-(bool, int) getRetirementAge(age, salary, percentSaved, saveGoal)
+(bool, int) get_retirement_age(age, salary, percent_saved, save_goal)
 '''
 
-def validSalary(salary):
+def valid_salary(salary):
   valid = False;
   try:
     salary = float(salary)
@@ -62,31 +62,31 @@ def validSalary(salary):
       valid = True;
   except:
     # Non float values
-    pass
+    valid = False;
 
   return (valid, salary)
 
-def validSaveGoal(saveGoal):
+def valid_save_goal(save_goal):
   valid = False;
   try:
-    saveGoal = float(saveGoal)
+    save_goal = float(save_goal)
     # x > 0
-    if (saveGoal > 0):
+    if (save_goal > 0):
       valid = True;
   except:
     # Non float values
-    pass
+    valid = False;
 
-  return (valid, saveGoal)
+  return (valid, save_goal)
 
-def validRetirementValues(age, salary, percentSaved, saveGoal):
-  return type(age) == int and type(salary) == float and type(percentSaved) == float and type(saveGoal) == float
+def valid_retirement_values(age, salary, percent_saved, save_goal):
+  return type(age) == int and type(salary) == float and type(percent_saved) == float and type(save_goal) == float
 
-def getRetirementAge(age, salary, percentSaved, saveGoal):
-  percentSaved *= 1.35
-  years = saveGoal / (salary * (percentSaved/100))
-  ageMet = years + age
-  ageMet = round(ageMet)
+def get_retirement_age(age, salary, percent_saved, save_goal):
+  percent_saved *= 1.35
+  years = save_goal / (salary * (percent_saved/100))
+  age_met = years + age
+  age_met = round(age_met)
 
-  met = ageMet < 100
-  return (met, ageMet)
+  met = age_met < 100
+  return (met, age_met)
