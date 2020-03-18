@@ -4,6 +4,7 @@ python:
 
 # command to install dependencies
 install:
+  - sudo apt-get install php
   - pip install -r requirements.txt
 
 # launch website so it can be tested
