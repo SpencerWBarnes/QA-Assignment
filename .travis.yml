@@ -6,6 +6,10 @@ python:
 install:
   - pip install -r requirements.txt
 
+# launch website so it can be tested
+before_script:
+  - "php -S index.php"
+
 # command to run tests
 script:
   - coverage run unitTests.py
