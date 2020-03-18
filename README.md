@@ -9,20 +9,21 @@ Goals of the assignment are to build a command line interface that can execute a
 Goals of the assignment are to implement a web interface, deploy it online, make a continuous integration pipeline, and set of delivery tools(_?_). Further details on the assignment can be found under [Docs/Assignment-3-Spring2020.pdf](/Docs/Assignment-3-Spring2020.pdf).
 Required steps are:
 - [x] Source control
-- [ ] Continuous integration(_?_) 
-- [ ] Static analysis(_?_)
+- [x] Continuous integration
+- [x] Static analysis
 - [x] Automated unit tests
 - [ ] Automated end-to-end tests(_?_)
 - [x] Automated deploy to staging
 - [x] Manual push to production
-- [ ] 3rd party code coverage(_?_)
+- [x] 3rd party code coverage
 
 ## Tools used:
-GitHub <sub> <sup> surprise </sup> </sub> for source control  
-Travis CI for automated unit testing  
-Heroku and GitHub Pages for automated web deployment  
-Coveralls for tests' code coverage  
-Sider for static code analysis  
+- GitHub <sub> <sup> surprise </sup> </sub> for source control and continuous integration  
+- Sider for static code analysis and linting  
+- Travis CI for automated unit testing  
+- Heroku and GitHub Pages for automated web deployment  
+- GitHub allows for a manual push from Staging to Production  
+- Coveralls -Coverage for Python- for tests' code coverage  
 
 ## Tests
 If you wish to see a list of all tests assocciated with each function as well their result, go to the test doc in [Docs/Tests.md](/Docs/Tests.md)
