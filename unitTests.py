@@ -24,7 +24,7 @@ import client
 #   global mockOutputResults.append(outputResult)
 
 class TestBmi(unittest.TestCase):
-  def test_getHeight(self):
+  def test_get_height(self):
     # Check type
     self.assertIsInstance( client.getHeight(5,5.5), float)
     
@@ -33,7 +33,7 @@ class TestBmi(unittest.TestCase):
     self.assertEqual( client.getHeight(5,5.5), 65.5)
     self.assertEqual( client.getHeight(8,11.9), 107.9)
 
-  def test_validWeight(self):
+  def test_valid_weight(self):
     # Check types
     self.assertIsInstance( client.validWeight('10.1')[0], bool)
     self.assertIsInstance( client.validWeight('10.1')[1], float)
@@ -44,7 +44,7 @@ class TestBmi(unittest.TestCase):
     self.assertEqual( client.validWeight('0')[0], False)
     self.assertEqual( client.validWeight('A')[0], False)
 
-  def test_validBMIValues(self):
+  def test_valid_BMI_values(self):
     # Check types
     self.assertIsInstance( client.validBMIValues(0.1,0.1), bool)
 
@@ -53,7 +53,7 @@ class TestBmi(unittest.TestCase):
     self.assertEqual( client.validBMIValues(0.1,'A'), False)
     self.assertEqual( client.validBMIValues(0.1,None), False)
 
-  def test_getBMI(self):
+  def test_get_BMI(self):
     # Check types
     self.assertIsInstance( client.getBMI(63,125)[0], float)
     self.assertIsInstance( client.getBMI(63,125)[1], str)
@@ -71,7 +71,7 @@ class TestBmi(unittest.TestCase):
     self.assertEqual( client.getBMI(20,22.222), (40,'Obese'))
 
 class TestRetirementAge(unittest.TestCase):
-  def test_validSalary(self):
+  def test_valid_salary(self):
     # Check types
     self.assertIsInstance( client.validSalary('50000')[0], bool)
     self.assertIsInstance( client.validSalary('50000')[1], float)
@@ -82,7 +82,7 @@ class TestRetirementAge(unittest.TestCase):
     self.assertEqual( client.validSalary('0')[0], False)
     self.assertEqual( client.validSalary('A')[0], False)
 
-  def test_validSaveGoal(self):
+  def test_valid_save_goal(self):
     # Check types
     self.assertIsInstance( client.validSaveGoal('250000')[0], bool)
     self.assertIsInstance( client.validSaveGoal('250000')[1], float)
@@ -93,7 +93,7 @@ class TestRetirementAge(unittest.TestCase):
     self.assertEqual( client.validSaveGoal('0')[0], False)
     self.assertEqual( client.validSaveGoal('A')[0], False)
 
-  def test_validRetirementValues(self):
+  def test_valid_retirement_values(self):
     # Check types
     self.assertIsInstance( client.validRetirementValues(1,0.1,0.1,0.1), bool)
 
@@ -106,7 +106,7 @@ class TestRetirementAge(unittest.TestCase):
     self.assertEqual( client.validRetirementValues(1,'0.1',0.1,'0.1'), False)
     self.assertEqual( client.validRetirementValues(1,None,0.1,None), False)
 
-  def test_getRetirementAge(self):
+  def test_get_retirement_age(self):
     # Check types
     self.assertIsInstance( client.getRetirementAge(10,10,74.1,400)[0], bool)
     self.assertIsInstance( client.getRetirementAge(10,10,74.1,400)[1], int)
@@ -117,5 +117,5 @@ class TestRetirementAge(unittest.TestCase):
     self.assertEqual( client.getRetirementAge(10,10,74.1,900)[0], False)
     
 
-if (__name__ == "__main__"):
+if (__name__ == '__main__'):
   unittest.main()
