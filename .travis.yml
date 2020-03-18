@@ -9,7 +9,7 @@ install:
 
 # launch website so it can be tested
 before_script:
-  - "php -S index.php"
+  - "php -S localhost:8000"
 
 # command to run tests
 script:
