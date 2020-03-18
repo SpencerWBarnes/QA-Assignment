@@ -109,11 +109,11 @@ def get_save_goal():
   return 'Invalid save goal value'
 
 def calculate_retirement_age(age, salary, percent_saved, save_goal):
-  (met, ageMet) = client.getRetirementAge(age, salary, percent_saved, save_goal)
+  (met, age_met) = client.getRetirementAge(age, salary, percent_saved, save_goal)
 
   output = 'Goal: '
   if (met):
-    output = output + 'Met <br> Age: ' + str(ageMet)
+    output = output + 'Met <br> Age: ' + str(age_met)
   else:
     output = output + 'Not met'
 
