@@ -18,7 +18,7 @@ def valid_weight(weight):
     # x > 0
     if (weight > 0):
       valid = True;
-  except: # Non float values
+  except Exceptiom: # Non float values
     valid = False;
 
   return (valid, weight)
@@ -59,7 +59,7 @@ def valid_salary(salary):
     # x > 0
     if (salary > 0):
       valid = True;
-  except: # Non float values
+  except Exceptiom: # Non float values
     valid = False;
 
   return (valid, salary)
@@ -71,7 +71,7 @@ def valid_save_goal(save_goal):
     # x > 0
     if (save_goal > 0):
       valid = True;
-  except: # Non float values
+  except Exceptiom: # Non float values
     valid = False;
 
   return (valid, save_goal)

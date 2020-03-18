@@ -75,15 +75,15 @@ def run_retirement_calculator(event):
   percent_saved = get_percent_saved()
   print(' Percent Saved: ' + str(percent_saved))
 
-  saveGoal = get_save_goal()
-  print(' Save goal: ' + str(saveGoal))
+  save_goal = get_save_goal()
+  print(' Save goal: ' + str(save_goal))
 
-  if not(client.validRetirementValues(age, salary, percent_saved, saveGoal)):
+  if not(client.validRetirementValues(age, salary, percent_saved, save_goal)):
     document['retirementResult'].innerHTML = ''
     return
 
   print('\n Results')
-  calculate_retirement_age(age, salary, percent_saved, saveGoal)
+  calculate_retirement_age(age, salary, percent_saved, save_goal)
 
 def get_current_age():
   return int(document['currentAge'].value)
@@ -100,16 +100,16 @@ def get_percent_saved():
   return float(document['percentSaved'].value)
 
 def get_save_goal():
-  saveGoal = document['saveGoal'].value
+  save_goal = document['saveGoal'].value
 
-  (valid, saveGoal) = client.validSaveGoal(saveGoal)
+  (valid, save_goal) = client.validSaveGoal(save_goal)
 
   if (valid):
-    return saveGoal
+    return save_goal
   return 'Invalid save goal value'
 
-def calculate_retirement_age(age, salary, precentSaved, saveGoal):
-  (met, ageMet) = client.getRetirementAge(age, salary, precentSaved, saveGoal)
+def calculate_retirement_age(age, salary, percent_saved, save_goal):
+  (met, ageMet) = client.getRetirementAge(age, salary, percent_saved, save_goal)
 
   output = 'Goal: '
   if (met):
