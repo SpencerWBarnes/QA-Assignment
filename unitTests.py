@@ -44,7 +44,7 @@ class TestBmi(unittest.TestCase):
     self.assertEqual( client.validWeight('0')[0], False)
     self.assertEqual( client.validWeight('A')[0], False)
 
-  def test_valid_BMI_values(self):
+  def test_valid_bmi_values(self):
     # Check types
     self.assertIsInstance( client.validBMIValues(0.1,0.1), bool)
 
@@ -53,7 +53,7 @@ class TestBmi(unittest.TestCase):
     self.assertEqual( client.validBMIValues(0.1,'A'), False)
     self.assertEqual( client.validBMIValues(0.1,None), False)
 
-  def test_get_BMI(self):
+  def test_get_bmi(self):
     # Check types
     self.assertIsInstance( client.getBMI(63,125)[0], float)
     self.assertIsInstance( client.getBMI(63,125)[1], str)

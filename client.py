@@ -3,9 +3,9 @@ float get_height(feet, inches)
 
 (bool, float) valid_weight(weight)
 
-bool valid_BMI_values(height, weight)
+bool valid_bmi_values(height, weight)
 
-(float, string) get_BMI(height, weight)
+(float, string) get_bmi(height, weight)
 '''
 
 def get_height(feet, inches):
@@ -24,10 +24,10 @@ def valid_weight(weight):
 
   return (valid, weight)
 
-def valid_BMI_values(height, weight):
+def valid_bmi_values(height, weight):
   return type(height) == float and type(weight) == float
 
-def get_BMI(height, weight):
+def get_bmi(height, weight):
   bmi = (weight * 0.45) / ((height * 0.025)**2)
   bmi = round(bmi,1)
 

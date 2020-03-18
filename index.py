@@ -2,7 +2,7 @@ from browser import document
 import client
 
 def setup_events():
-  document['calculateBMI'].bind('click', runBMI)
+  document['calculateBMI'].bind('click', run_bmi)
   document['calculateRetirement'].bind('click', run_retirement_calculator)
   print('Set up all buttons')
 
@@ -23,7 +23,7 @@ def setup_events():
   print("Ran slider's first feedback")
 
 # Helpers associated with getting user's BMI
-def run_BMI(event):
+def run_bmi(event):
   # Lead in with title
   print('\nCalculating BMI')
   # Expected input
@@ -54,7 +54,7 @@ def get_weight():
     return weight
   return 'Invalid weight value'
 
-def calculate_BMI(height, weight):
+def calculate_bmi(height, weight):
   (bmi, category) = client.getBMI(height, weight)
   output = 'Calculated BMI: ' + str(bmi) + '<br> BMI Category: ' + str(category)
 
