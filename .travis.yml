@@ -15,7 +15,7 @@ before_script:
 # command to run tests
 script:
   - coverage run unitTests.py
-  - pytest endToEndTests.py --browser=chrome
+  - unittest endToEndTests.py --browser=chrome
 
 after_success:
   - coveralls
