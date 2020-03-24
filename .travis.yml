@@ -9,11 +9,13 @@ install:
 
 # launch website so it can be tested
 before_script:
-  - "php -S localhost:8000"
+  - seleniumbase install chromedriver
+  - php -S localhost:8000 &
 
 # command to run tests
 script:
   - coverage run unitTests.py
+  - pytest endToEndTests.py --browser=chrome
 
 after_success:
   - coveralls
