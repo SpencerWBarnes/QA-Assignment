@@ -15,7 +15,7 @@ before_script:
 # command to run tests
 script:
   - coverage run unitTests.py
-  - pytest endToEndTests.py --browser=chrome
+  - pytest endToEndTests.py --browser=chrome --start-page=http://localhost:8000
 
 after_success:
   - coveralls
