@@ -34,12 +34,12 @@ def run_bmi(event):
   weight = get_weight()
   print(' Weight: ' + str(weight))
 
-  if not(client.validBMIValues(height, weight)):
+  if not(client.valid_bmi_values(height, weight)):
     document['bmiResult'].innerHTML = ''
     return
 
   print('\n Results:')
-  get_weight(height, weight)
+  calculate_bmi(height, weight)
 
 def get_height():
   feet = int(document['feet'].value)
@@ -49,13 +49,13 @@ def get_height():
 def get_weight():
   weight = document['weight'].value
 
-  (valid, weight) = client.validWeight(weight)
+  (valid, weight) = client.valid_weight(weight)
   if (valid):
     return weight
   return 'Invalid weight value'
 
 def calculate_bmi(height, weight):
-  (bmi, category) = client.getBMI(height, weight)
+  (bmi, category) = client.get_bmi(height, weight)
   output = 'Calculated BMI: ' + str(bmi) + '<br> BMI Category: ' + str(category)
 
   print(output)
@@ -78,7 +78,7 @@ def run_retirement_calculator(event):
   save_goal = get_save_goal()
   print(' Save goal: ' + str(save_goal))
 
-  if not(client.validRetirementValues(age, salary, percent_saved, save_goal)):
+  if not(client.valid_retirement_values(age, salary, percent_saved, save_goal)):
     document['retirementResult'].innerHTML = ''
     return
 
@@ -91,7 +91,7 @@ def get_current_age():
 def get_salary():
   salary = document['salary'].value
 
-  (valid, salary) = client.validSalary(salary)
+  (valid, salary) = client.valid_salary(salary)
   if (valid):
     return salary
   return 'Invalid salary value'
@@ -102,14 +102,14 @@ def get_percent_saved():
 def get_save_goal():
   save_goal = document['saveGoal'].value
 
-  (valid, save_goal) = client.validSaveGoal(save_goal)
+  (valid, save_goal) = client.valid_save_goal(save_goal)
 
   if (valid):
     return save_goal
   return 'Invalid save goal value'
 
 def calculate_retirement_age(age, salary, percent_saved, save_goal):
-  (met, age_met) = client.getRetirementAge(age, salary, percent_saved, save_goal)
+  (met, age_met) = client.get_retirement_age(age, salary, percent_saved, save_goal)
 
   output = 'Goal: '
   if (met):
@@ -133,7 +133,7 @@ def inches_on_change(event):
 
 def weight_on_change(event):
   value = document['weight'].value
-  (valid, value) = client.validWeight(value)
+  (valid, value) = client.valid_weight(value)
 
   if (valid):
     document['weightWarning'].textContent = ''
@@ -146,7 +146,7 @@ def current_age_on_change(event):
 
 def salary_on_change(event):
   value = document['salary'].value
-  (valid, value) = client.validSalary(value)
+  (valid, value) = client.valid_salary(value)
 
   if (valid):
     document['salaryWarning'].textContent = ''
@@ -159,7 +159,7 @@ def percent_saved_on_change(event):
 
 def save_goal_on_change(event):
   value = document['saveGoal'].value
-  (valid, value) = client.validSaveGoal(value)
+  (valid, value) = client.valid_save_goal(value)
 
   if (valid):
     document['saveGoalWarning'].textContent = ''
