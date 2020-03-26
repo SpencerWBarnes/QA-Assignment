@@ -4,18 +4,18 @@ python:
 
 # command to install dependencies
 install:
-  - sudo apt-get install php
+  # - sudo apt-get install php
   - pip install -r requirements.txt
 
 # launch website so it can be tested
 before_script:
-  - seleniumbase install chromedriver
-  - php -S localhost:8000 &
+  # - seleniumbase install chromedriver
+  # - php -S localhost:8000 &
 
 # command to run tests
 script:
   - coverage run unitTests.py
-  - pytest endToEndTests.py --browser=chrome --start-page=http://localhost:8000
+  # - pytest endToEndTests.py --browser=chrome --start-page=http://localhost:8000
 
 after_success:
   - coveralls
