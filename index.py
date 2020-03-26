@@ -39,7 +39,7 @@ def run_bmi(event):
     return
 
   print('\n Results:')
-  get_weight(height, weight)
+  calculate_bmi(height, weight)
 
 def get_height():
   feet = int(document['feet'].value)
