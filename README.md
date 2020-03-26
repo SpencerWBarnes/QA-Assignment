@@ -12,7 +12,7 @@ Required steps are:
 - [x] Continuous integration
 - [x] Static analysis
 - [x] Automated unit tests
-- [ ] Automated end-to-end tests(_?_)
+- [x] Automated end-to-end tests
 - [x] Automated deploy to staging
 - [x] Manual push to production
 - [x] 3rd party code coverage
@@ -20,10 +20,11 @@ Required steps are:
 ## Tools used:
 - GitHub <sub> <sup> surprise </sup> </sub> for source control and continuous integration  
 - Sider for static code analysis and linting  
-- Travis CI for automated unit testing  
+- Travis CI runs Python's unittest module for automated unit testing  
 - Heroku and GitHub Pages for automated web deployment  
+- Travis CI runs a local PHP server and runs SeleniumBase(_a Selenium wrapper for Python_) for automated end to end tests  
 - GitHub allows for a manual push from Staging to Production  
-- Coveralls -Coverage for Python- for tests' code coverage  
+- Coverage(_the Coveralls runner for Python_) for the unit tests' code coverage  
 
 ## Tests
 If you wish to see a list of all tests assocciated with each function as well their result, go to the test doc in [Docs/Tests.md](/Docs/Tests.md)
