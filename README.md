@@ -5,8 +5,8 @@ This is a repository for the application developed for the assignments given for
 **Assignment 2:**
 Goals of the assignment are to build a command line interface that can execute a few functions (_calculate BMI_, _calculate age of retirment_) while following Test Driven Development principals. Further details on the assignment can be found under [Docs/Assignment-2-Spring2020.pdf](/Docs/Assignment-2-Spring2020.pdf).
 
-**Assignment 3:**
-Goals of the assignment are to implement a web interface, deploy it online, make a continuous integration pipeline, and set of delivery tools(_?_). Further details on the assignment can be found under [Docs/Assignment-3-Spring2020.pdf](/Docs/Assignment-3-Spring2020.pdf).
+**Assignments 3 and 4:**
+Goals of the assignment are to implement a web interface, deploy it online, make a continuous integration pipeline, and set of delivery tools. Further details on the assignment can be found under [Docs/Assignment-3-4-Spring2020.pdf](/Docs/Assignment-3-4-Spring2020.pdf).
 Required steps are:
 - [x] Source control
 - [x] Continuous integration
